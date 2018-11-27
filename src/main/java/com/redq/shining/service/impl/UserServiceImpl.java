@@ -27,14 +27,4 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
         return userMapper.findByMobile(mobile);
     }
 
-    @Override
-    public List<User> findAll() {
-        return userMapper.selectAll();
-    }
-
-    @Override
-    public User findById(Long id) {
-        return userMapper.selectByPrimaryKey(id);
-    }
-
 }
