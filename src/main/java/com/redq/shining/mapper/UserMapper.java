@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * @author ahlon
+ */
 @Repository
 @Mapper
 public interface UserMapper extends BaseMapper<User> {

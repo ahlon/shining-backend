@@ -2,6 +2,9 @@ package com.redq.shining.common;
 
 import java.util.List;
 
+/**
+ * @author ahlon
+ */
 public abstract class BaseServiceImpl<T> implements BaseService<T> {
 
     public abstract BaseMapper<T> getMapper();
