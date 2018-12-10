@@ -1,5 +1,6 @@
 package com.redq.shining.controller;
 
+import com.redq.shining.common.ResponseResult;
 import com.redq.shining.entity.User;
 import com.redq.shining.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,23 +18,40 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/view")
-    public User findByMobile(Long id) {
-        return userService.findById(id);
+    public ResponseResult<User> findByMobile(Long id) {
+        User user = userService.findById(id);
+        return ResponseResult.success(user);
     }
 
-    @GetMapping("/view-by-mobi")
-    public User findByMobile(String mobile) {
-        return userService.findByMobile(mobile);
+    @GetMapping("/find-by-mobile")
+    public ResponseResult<User> findByMobile(String mobile) {
+        User user = userService.findByMobile(mobile);
+        return ResponseResult.success(user);
     }
 
     @GetMapping("/list")
-    public List<User> findAll() {
-        return userService.findAll();
+    public ResponseResult<List<User>> findAll() {
+        List<User> users = userService.findAll();
+        return ResponseResult.success(users);
+    }
+
+    @GetMapping("/search")
+    public ResponseResult<List<User>> search() {
+        List<User> users = userService.findAll();
+        return ResponseResult.success(users);
     }
 
     @GetMapping("/remove")
-    public int remove(Long id) {
-        return userService.remove(id);
+    public ResponseResult<Integer> remove(Long id) {
+        int i = userService.remove(id);
+        if (i == 1) {
+            return ResponseResult.success(new Integer(i));
+        } else if (i == 0) {
+            return ResponseResult.fail(new Integer(i), "不存在id为" + id + "的用户");
+        } else {
+            // exception
+            throw new RuntimeException("删除失败!");
+        }
     }
 
 }

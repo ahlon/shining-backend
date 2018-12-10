@@ -1,6 +1,5 @@
 package com.redq.shining;
 
-import com.redq.shining.entity.User;
 import com.redq.shining.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;

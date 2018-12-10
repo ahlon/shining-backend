@@ -1,6 +1,8 @@
 package com.redq.shining.entity;
 
 import lombok.Data;
+import org.springframework.context.annotation.Primary;
+import tk.mybatis.mapper.annotation.KeySql;
 
 import javax.persistence.Id;
 import java.util.Date;
@@ -9,6 +11,7 @@ import java.util.Date;
 public class BaseEntity {
 
     @Id
+    @KeySql(useGeneratedKeys = true)
     private Long id;
 
     private Date createdAt;

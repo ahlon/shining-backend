@@ -2,6 +2,9 @@ package com.redq.shining.entity;
 
 import lombok.Data;
 
+/**
+ * @author ahlon
+ */
 @Data
 public class User extends BaseEntity {
 
