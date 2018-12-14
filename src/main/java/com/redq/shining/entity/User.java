@@ -1,5 +1,6 @@
 package com.redq.shining.entity;
 
+import com.redq.shining.common.status.UserStatus;
 import lombok.Data;
 
 /**

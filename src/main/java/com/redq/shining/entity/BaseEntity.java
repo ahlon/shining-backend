@@ -1,7 +1,6 @@
 package com.redq.shining.entity;
 
 import lombok.Data;
-import org.springframework.context.annotation.Primary;
 import tk.mybatis.mapper.annotation.KeySql;
 
 import javax.persistence.Id;
