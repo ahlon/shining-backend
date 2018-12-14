@@ -1,1 +1,5 @@
 1. validation
+2. trace log
+3. unit test
+4. notify
+5. email
